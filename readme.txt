@@ -1,0 +1,1 @@
+Paste the database script located inside the database folder
