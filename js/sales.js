@@ -20,6 +20,7 @@ $("#check").on('click', function(e){
 })
 $("#submitItem").on('click',function(e){
 	var productCode = $("[name='productCode']").val();
+	var productcode2 = $()
 	$.ajax({
 		url : "includes/getProduct.php",
 		type : "GET",
@@ -27,11 +28,21 @@ $("#submitItem").on('click',function(e){
 		success : function (result){
 			var saleData = $("#saleData");
 			var parsed = JSON.parse(result);
-
+			
 			$.each(parsed, function(key,val){
 				var newRow = $("<tr>");
-				newRow.html("<td>"+val.productCode+"</td><td>"+val.productName+'</td><td class="value">'+val.productPrice+"</td>");
+				newRow.html("<td><input type='number' disabled='disabled' name='"+productCode+"' value='"+val.productCode+"'></td><td>"+val.productName+"</td><td><input type='text' id='x' disabled='disabled' name='"+val.productPrice+"' value='"+val.productPrice+"'></td>");
 				saleData.append(newRow);
+				function add(){
+					return totalPrice + x;
+				}
+				function prints(){
+					var totalPrice = val.productPrice;
+					add();
+					console.log(totalPrice);
+				}
+				prints();
+				
 			})
 		}
 	})
