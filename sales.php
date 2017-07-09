@@ -34,7 +34,7 @@ include 'includes/checkUser.php';
 							<h4>Total</h4>
 						</div>
 						<div class="col-md-6">
-							<h4 id="price" class="pull-right"></h4>
+							<h4 id="price" class="pull-right"><input type="number" name="totalPrice" disabled="disabled"></h4>
 						</div>
 					</div><hr>
 					<div class="col-md-12">
