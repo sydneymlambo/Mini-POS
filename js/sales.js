@@ -18,6 +18,16 @@ $("#check").on('click', function(e){
 
 	})
 })
+var totalPrice = 0;
+var arrItems = [];
+function itemInArray(item){
+	var itemQty = $("#qty"+item);
+	if(itemQty.length){
+		return true;
+	}else{
+		return false;
+	}
+}
 $("#submitItem").on('click',function(e){
 	var productCode = $("[name='productCode']").val();
 	var productcode2 = $()
@@ -30,20 +40,25 @@ $("#submitItem").on('click',function(e){
 			var parsed = JSON.parse(result);
 			
 			$.each(parsed, function(key,val){
-				var newRow = $("<tr>");
-				newRow.html("<td><input type='number' disabled='disabled' name='"+productCode+"' value='"+val.productCode+"'></td><td>"+val.productName+"</td><td><input type='text' id='x' disabled='disabled' name='"+val.productPrice+"' value='"+val.productPrice+"'></td>");
-				saleData.append(newRow);
-				function add(){
-					return totalPrice + x;
+				
+				if(!itemInArray(val.productCode)){
+					var newRow = $("<tr id='"+val.productCode+"'>");
+					console.log("not exts");
+					newRow.html("<td><input type='number' disabled='disabled' name='"+productCode+"' value='"+val.productCode+"'></td><td>"+val.productName+"</td><td id='qty"+val.productCode+"'>1</td><td><input type='text' id='x' disabled='disabled' name='"+val.productPrice+"' value='"+val.productPrice+"'></td>");	
+					saleData.append(newRow);
+				}else{
+					var currentQty = parseInt($('#qty'+val.productCode).html());
+					currentQty++;
+					$('#qty'+val.productCode).html(currentQty);
+					console.log("exts");
 				}
-				function prints(){
-					var totalPrice = val.productPrice;
-					add();
-					console.log(totalPrice);
-				}
-				prints();
+				//newRow.html("<td><input type='number' disabled='disabled' name='"+productCode+"' value='"+val.productCode+"'></td><td>"+val.productName+"</td><td id='qty"+val.productCode+"'></td><td><input type='text' id='x' disabled='disabled' name='"+val.productPrice+"' value='"+val.productPrice+"'></td>");
+				
+				totalPrice = (parseFloat(totalPrice) + parseFloat(val.productPrice));
+				
 				
 			})
+			$("#totalPrice").val(totalPrice);
 		}
 	})
 })
