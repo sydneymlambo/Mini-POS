@@ -4,7 +4,7 @@ include 'includes/checkUser.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>POS - Home Screen</title>
+	<title>POS - Recieve Stock</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
@@ -15,7 +15,7 @@ include 'includes/checkUser.php';
 	<div class="container-fluid titleBar">
 		<header class="col-md-12">
 			<div class="titles col-md-4">
-				<h2>HOME</h2>
+				<h2>SALES</h2>
 			</div>
 			<div id="center" class="titles col-md-4">
 				<h2>POS</h2>
@@ -25,25 +25,10 @@ include 'includes/checkUser.php';
 			</div>
 		</header>
 	</div>
-	<hr>
-	<section class="container">
-		<table class="table table-bordered">
-			<tr>
-				<th><a class="btn btn-success btn-block" href="sales.php"><h2>Sales</h2></a></th>
-			</tr>
-			<tr>
-				<th><a class="btn btn-success btn-block" href="view.php"><h2>Review Stock</h2></a></th>
-			</tr>
-			<tr>
-				<th><a class="btn btn-success btn-block" href="recieve.php"><h2>Recieve Stock</h2></a></th>
-			</tr>
-			<tr>
-				<th><a class="btn btn-success btn-block" href="saleHistory.php"><h2>View Sale History</h2></a></th>
-			</tr>
-			<tr>
-				<th><a class="btn btn-warning btn-block" href="logout.php"><h2>Log Out</h2></a></th>
-			</tr>
-		</table>
-	</section>
+	<div class="container">
+		<?php include 'includes/history.php'; ?>
+	<a href="index.php" class="btn btn-block btn-warning">Back</a>
+	</div>
+	<script src="js/jquery.js"></script>
 </body>
 </html>

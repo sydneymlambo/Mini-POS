@@ -65,8 +65,8 @@ include 'includes/checkUser.php';
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>#</th>
-							<th>Product</th>
+							<th>Product ID</th>
+							<th>Product Name</th>
 							<th>Qty</th>
 							<th>Price</th>
 						</tr>
@@ -77,11 +77,14 @@ include 'includes/checkUser.php';
 					<tfoot>
 						<tr>
 							<td colspan="2">
-								<button class="btn btn-block btn-success">Check out</button>
+								<button id="checkOut" class="btn btn-block btn-success">Check Out</button>
 							</td>
 							<td>
-								<a href="index.php" class="btn btn-block btn-warning">Back</a>
+								<a href="index.php" id="back" class="btn btn-block btn-warning">Back</a>
 							</td>
+						</tr>
+						<tr>
+							<td id="error" colspan="4"></td>
 						</tr>
 					</tfoot>
 				</table>

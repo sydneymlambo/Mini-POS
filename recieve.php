@@ -28,6 +28,10 @@ include 'includes/checkUser.php';
 	<div class="container">
 		<table class="table table-default">
 			<tr>
+				<th>Product ID</th>
+				<td><input type="number" name="productId" class="form-control" required="required"></td>
+			</tr>
+			<tr>
 				<th>Product SKU</th>
 				<td><input type="number" name="productCode" class="form-control" required="required"></td>
 			</tr>
