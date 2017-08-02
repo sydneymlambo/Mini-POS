@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2009 at 12:27 AM
+-- Generation Time: Aug 02, 2017 at 02:59 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -23,33 +23,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `currentsale`
---
-
-CREATE TABLE `currentsale` (
-  `id` int(11) NOT NULL,
-  `productCode` int(6) NOT NULL,
-  `productName` varchar(255) NOT NULL,
-  `productPrice` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `currentsale`
---
-
-INSERT INTO `currentsale` (`id`, `productCode`, `productName`, `productPrice`) VALUES
-(1, 223344, 'Nivea', 47.99);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
-  `productCode` int(11) NOT NULL,
-  `productName` varchar(255) NOT NULL,
+  `productId` int(11) UNSIGNED NOT NULL,
+  `productCode` int(6) NOT NULL,
+  `productName` varchar(20) NOT NULL,
   `productPrice` float(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -57,26 +37,74 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `productCode`, `productName`, `productPrice`) VALUES
-(5, 123456, 'Surf washing powder', 39.99),
-(6, 246810, 'Clover milk', 27.99),
-(7, 481216, 'Soup', 10.99),
-(8, 510152, 'Doritos', 17.99),
-(9, 112233, 'Lion matches', 2.99),
-(10, 223344, 'Nivea', 47.99),
-(11, 334455, 'Light bulb', 17.99),
-(12, 445566, 'Beef stock', 2.99),
-(13, 556677, 'Powder milk', 26.99),
-(14, 998877, 'Bar one', 8.99),
-(15, 665544, 'Bar one', 8.99),
-(16, 665544, 'Lays', 12.99),
-(17, 667788, 'Pin-pop', 1.99),
-(18, 222333, 'Bellow zero', 1.99),
-(19, 111222, 'Super-B', 97.99),
-(20, 444555, 'Baked beans', 12.50),
-(21, 654321, 'Wild island', 17.99),
-(22, 911008, 'Lunchbar', 8.99),
-(23, 443322, 'Exam pad', 10.99);
+INSERT INTO `products` (`productId`, `productCode`, `productName`, `productPrice`) VALUES
+(1, 123456, 'Soap', 10.95),
+(2, 445566, 'Milk', 22.99),
+(3, 334455, 'White bread', 10.99),
+(4, 223344, 'Brown bread', 9.99),
+(5, 445566, 'Doritos', 16.89),
+(6, 667788, 'Lunch Bar', 8.99),
+(7, 778899, 'Weet Bix', 29.99);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `saleitems`
+--
+
+CREATE TABLE `saleitems` (
+  `saleId` int(11) UNSIGNED NOT NULL,
+  `productId` int(11) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `saleitems`
+--
+
+INSERT INTO `saleitems` (`saleId`, `productId`) VALUES
+(37, 1),
+(37, 4),
+(37, 3),
+(38, 3),
+(38, 4),
+(39, 4),
+(39, 3),
+(39, 2),
+(39, 6),
+(40, 1),
+(41, 7),
+(41, 3),
+(0, 1),
+(0, 7),
+(0, 6),
+(0, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sales`
+--
+
+CREATE TABLE `sales` (
+  `saleId` int(11) UNSIGNED NOT NULL,
+  `saleDate` varchar(20) NOT NULL,
+  `totalPrice` float(6,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sales`
+--
+
+INSERT INTO `sales` (`saleId`, `saleDate`, `totalPrice`) VALUES
+(37, '02/08/17 10:43', 31.93),
+(38, '02/08/17 10:46', 20.98),
+(39, '02/08/17 14:42', 69.85),
+(40, '02/08/17 14:45', 10.95),
+(41, '02/08/17 14:47', 40.98),
+(42, '02/08/17 14:52', 49.93),
+(43, '02/08/17 14:53', 29.99),
+(44, '02/08/17 14:54', 31.93),
+(45, '02/08/17 14:57', 18.98);
 
 -- --------------------------------------------------------
 
@@ -103,16 +131,16 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`) VALUES
 --
 
 --
--- Indexes for table `currentsale`
---
-ALTER TABLE `currentsale`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`productId`);
+
+--
+-- Indexes for table `sales`
+--
+ALTER TABLE `sales`
+  ADD PRIMARY KEY (`saleId`);
 
 --
 -- Indexes for table `users`
@@ -125,15 +153,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `currentsale`
+-- AUTO_INCREMENT for table `sales`
 --
-ALTER TABLE `currentsale`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+ALTER TABLE `sales`
+  MODIFY `saleId` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT for table `users`
 --
