@@ -44,8 +44,9 @@ $("#submitItem").on('click',function(e){
 				if(!itemInArray(val.productCode)){
 					var newRow = $("<tr id='"+val.productCode+"'>");
 					console.log("not exts");
-					newRow.html("<td><input type='number' disabled='disabled' name='"+productCode+"' value='"+val.productCode+"'></td><td>"+val.productName+"</td><td id='qty"+val.productCode+"'>1</td><td><input type='text' id='x' disabled='disabled' name='"+val.productPrice+"' value='"+val.productPrice+"'></td>");	
+					newRow.html("<span id='spn"+itemsCounter+"' style='display: none;'>"+val.productId+"</span><td><input type='number' disabled='disabled' name='"+productCode+"' value='"+val.productId+"'></td><td>"+val.productName+"</td><td id='qty"+val.productCode+"'>1</td><td><input type='text' id='x' disabled='disabled' name='"+val.productPrice+"' value='"+val.productPrice+"'></td>");	
 					saleData.append(newRow);
+					itemsCounter++;
 				}else{
 					var currentQty = parseInt($('#qty'+val.productCode).html());
 					currentQty++;
@@ -59,6 +60,49 @@ $("#submitItem").on('click',function(e){
 				
 			})
 			$("#totalPrice").val(totalPrice);
+		}
+	})
+})
+var itemsCounter = 1;
+$("#checkOut").on('click',function(){
+
+
+
+//alert(strItems);
+
+	var totalPrice = $("[name='totalPrice']").val();
+	$.ajax({
+		type : "POST",
+		url : "includes/insertSale.php",
+		data : "totalPrice="+totalPrice,
+		success : function(result){
+			
+			var arrItems = new Array();
+
+
+for(var i = 1; i <= itemsCounter -1; i++)
+{
+	var productId = $('#spn'+i).html();
+	//alert(productId);
+	arrItems.push(productId);
+	
+}
+
+
+
+$.ajax({
+		url : "includes/insertSaleItem.php",
+		data : "saleId="+result+"&productId="+arrItems,
+		type : "POST",
+		success : function (result){
+		console.log(result);
+		$("#error").text("Sale Proccessed click back or refresh!");
+		}
+	})
+
+//alert(strItems);
+
+			
 		}
 	})
 })

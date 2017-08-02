@@ -8,7 +8,7 @@ $.ajax({
 
 		$.each(parse, function(key,val){
 			var row = $("<tr>");
-			row.html("<td>"+val.id+"</td><td>"+val.productCode+"</td><td>"+val.productName+"</td><td>"+val.productPrice+"</td>");
+			row.html("<td>"+val.productId+"</td><td>"+val.productCode+"</td><td>"+val.productName+"</td><td>"+val.productPrice+"</td>");
 
 			data.append(row);
 		})
