@@ -7,12 +7,14 @@
 		$error = "Enter product name";
 	}elseif (empty($_POST['productPrice'])) {
 		$error = "Enter product price";
+	}elseif(empty($_POST['productId'])){
+		$error = "Enter product ID";
 	}else{
 		$productCode = $_POST['productCode'];
 		$productName = $_POST['productName'];
 		$productPrice = $_POST['productPrice'];
-
-		$query = $db->query("INSERT INTO products VALUES(null,'".$productCode."','".$productName."','".$productPrice."')");
+		$productId = $_POST['productId'];
+		$query = $db->query("INSERT INTO products VALUES('".$productId."','".$productCode."','".$productName."','".$productPrice."')");
 		$error = "Product successfully entered";
 	}
 	echo $error;
