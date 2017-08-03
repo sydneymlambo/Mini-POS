@@ -7,14 +7,15 @@ $saleQueryResult = mysqli_query($db,$saleQuery);
 
 
 while($row = mysqli_fetch_array($saleQueryResult)){
-	$query = "SELECT si.saleId,saleDate,totalPrice,si.productId,pr.productName,pr.productPrice
+	$query = "SELECT si.saleId,saleDate,totalPrice,si.productId,pr.productName,pr.productCode,pr.productPrice
 	FROM saleitems si
 	INNER JOIN sales s ON si.saleId = s.saleId
 	INNER JOIN products pr ON si.productId = pr.productId";
 
 $queryResult = mysqli_query($db,$query);
 	?>
-	<table class="table table-bodered">
+
+	<table class="table table-striped">
 		<tr>
 			<th><h4>Sale Number</h4></th>
 			<th><h4>Date and Time</h4></th>
@@ -37,7 +38,7 @@ $queryResult = mysqli_query($db,$query);
 			?>
 			
 			<tr>
-				<td><?php echo $rows['productId']; ?></td>
+				<td><?php echo $rows['productCode']; ?></td>
 				<td><?php echo $rows['productName']; ?></td>
 				<td><?php echo $rows['productPrice']; ?></td>
 			</tr> 
@@ -46,7 +47,9 @@ $queryResult = mysqli_query($db,$query);
 		} ?>
 
 	</table>
+	<br><br>
 	<hr>
+	<br><br>
 	 <?php
 }
 
