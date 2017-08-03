@@ -26,8 +26,11 @@ include 'includes/checkUser.php';
 		</header>
 	</div>
 	<div class="container">
-		<?php include 'includes/history.php'; ?>
+	<hr>
 	<a href="index.php" class="btn btn-block btn-warning">Back</a>
+	<hr>
+		<?php include 'includes/history.php'; ?>
+	
 	</div>
 	<script src="js/jquery.js"></script>
 </body>
