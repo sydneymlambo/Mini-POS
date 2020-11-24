@@ -6,6 +6,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+//Colors
+
+$red: #c0392b;
+$black: #2c3e50;
 //buttons
 
 .btn {
@@ -16,21 +20,58 @@ body {
     justify-content: center;
 
     &.btn-primary {
-        background-color: #c0392b;
+        background-color: $red;
         color: #fff;
+        border-color: $red;
+
+        &:hover {
+            background-color: #fff;
+            color: $red;
+        }
     }
 
     &.btn-secondary {
         background-color: #fff;
-        color: #2c3e50;
+        color: $black;
+        border-color: $black
+
+        &:hover {
+            background-color: $black;
+            color: #fff;
+        }
     }
 }
 
 /* ----------------------LOGIN PAGE-----------------------------*/
 
 #login {
+    background-image: url('../img/login-bg.jpg');
+    background-size: cover;
     
     h1 {
         font-size: 1.857rem;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .col-12 {
+        background-color: rgba(255,255,255, .6);
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        padding: 2em;
+        width: 90%;
+    }
+
+    .card-header {
+        background-color: #fff;
+        margin-bottom: 20px;
     }
 }

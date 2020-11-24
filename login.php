@@ -5,9 +5,9 @@ include 'head.php';
 
 <body id="login">
 
-    <div class="container">
+    <div class="container mr-md-0">
         <div class="row">
-            <div class="col-12 col-md-4 ml-auto">
+            <div class="col-12 col-md-6 col-lg-5 ml-auto">
             <div class="card">
                     <div class="card-header">
                         <h1>Welcome</h1>
