@@ -1,16 +1,8 @@
 <?php
 include 'includes/checkUser.php';
+include 'head.php';
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>POS - Home Screen</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-</head>
+
 <body>
 	<div class="container-fluid titleBar">
 		<header class="col-md-12">
@@ -45,5 +37,4 @@ include 'includes/checkUser.php';
 			</tr>
 		</table>
 	</section>
-</body>
-</html>
+    <?php include 'end-head.php'; ?>

@@ -1,0 +1,32 @@
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-size: 1.142rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn.btn-primary {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+.btn.btn-secondary {
+  background-color: #fff;
+  color: #2c3e50;
+}
+/*# sourceMappingURL=main.css.map */

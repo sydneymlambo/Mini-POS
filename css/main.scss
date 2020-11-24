@@ -1,0 +1,36 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+//buttons
+
+.btn {
+    text-transform: uppercase;
+    font-size: 1.142rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.btn-primary {
+        background-color: #c0392b;
+        color: #fff;
+    }
+
+    &.btn-secondary {
+        background-color: #fff;
+        color: #2c3e50;
+    }
+}
+
+/* ----------------------LOGIN PAGE-----------------------------*/
+
+#login {
+    
+    h1 {
+        font-size: 1.857rem;
+    }
+}
