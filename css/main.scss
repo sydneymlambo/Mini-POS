@@ -6,6 +6,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+a, button {
+    transition: all .4s;
+    &:hover, &:focus, &:active {
+        outline: none;
+        box-shadow: none;
+        text-decoration: none;
+    }
+}
+
 //Colors
 
 $red: #c0392b;
@@ -33,7 +42,7 @@ $black: #2c3e50;
     &.btn-secondary {
         background-color: #fff;
         color: $black;
-        border-color: $black
+        border-color: $black;
 
         &:hover {
             background-color: $black;
@@ -73,5 +82,84 @@ $black: #2c3e50;
     .card-header {
         background-color: #fff;
         margin-bottom: 20px;
+    }
+}
+
+/*----------------------------Home Page----------------------------*/
+
+#home {
+    .top-bar {
+        background-color: $black;
+        color: #fff;
+        padding: 15px 0;
+
+        a {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: $red;
+            border-radius: 50%;
+            font-size: 1.571rem;
+            transition: all .3s;
+
+            &:hover {
+                background-color: $black;
+                color: $red;
+                border: 1px solid $red;
+            }
+        }
+    }
+
+    .items {
+        padding: 2em;
+    }
+
+    .item {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        border-radius: 5px;
+        justify-content: center;
+        padding: 2em 0;
+        
+        span, em {
+            display: block;
+            width: 100%;
+        }
+
+        span {
+            i {
+                font-size: 2.714rem;
+            }
+        }
+
+        em {
+            font-size: 1.857rem
+        }
+
+        &.sales, &.review {
+            background-color: $black;
+            color: #fff;
+            border: 1px solid $black;
+
+            &:hover {
+                background-color: #fff;
+                color: $black;
+            }
+        }
+
+        &.recieve, &.log {
+            background-color: $red;
+            color: #fff;
+            border: 1px solid $red;
+
+            &:hover {
+                background-color: #fff;
+                color: $red;
+            }
+        }
     }
 }

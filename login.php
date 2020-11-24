@@ -14,19 +14,21 @@ include 'head.php';
                         <p>Please login</p>
                     </div>
                     <div class="card-boby">
-                        <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input class="form-control" type="text" name="username" required="required">
-                        </div>
+                        <form action="login.php" method="post">
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input class="form-control" type="text" name="username" required="required">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input class="form-control" type="password" name="password" required="required">
-                        </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input class="form-control" type="password" name="password" required="required">
+                            </div>
 
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Login</button>
-                        </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

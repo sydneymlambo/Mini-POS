@@ -6,6 +6,18 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a, button {
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+a:hover, a:focus, a:active, button:hover, button:focus, button:active {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-decoration: none;
+}
+
 .btn {
   text-transform: uppercase;
   font-size: 1.142rem;
@@ -34,10 +46,10 @@ body {
 .btn.btn-secondary {
   background-color: #fff;
   color: #2c3e50;
-  border-color: #2c3e50 .btn.btn-secondary;
+  border-color: #2c3e50;
 }
 
-.btn.btn-secondary :hover {
+.btn.btn-secondary:hover {
   background-color: #2c3e50;
   color: #fff;
 }
@@ -79,5 +91,91 @@ body {
 #login .card-header {
   background-color: #fff;
   margin-bottom: 20px;
+}
+
+/*----------------------------Home Page----------------------------*/
+#home .top-bar {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 15px 0;
+}
+
+#home .top-bar a {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #c0392b;
+  border-radius: 50%;
+  font-size: 1.571rem;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#home .top-bar a:hover {
+  background-color: #2c3e50;
+  color: #c0392b;
+  border: 1px solid #c0392b;
+}
+
+#home .items {
+  padding: 2em;
+}
+
+#home .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2em 0;
+}
+
+#home .item span, #home .item em {
+  display: block;
+  width: 100%;
+}
+
+#home .item span i {
+  font-size: 2.714rem;
+}
+
+#home .item em {
+  font-size: 1.857rem;
+}
+
+#home .item.sales, #home .item.review {
+  background-color: #2c3e50;
+  color: #fff;
+  border: 1px solid #2c3e50;
+}
+
+#home .item.sales:hover, #home .item.review:hover {
+  background-color: #fff;
+  color: #2c3e50;
+}
+
+#home .item.recieve, #home .item.log {
+  background-color: #c0392b;
+  color: #fff;
+  border: 1px solid #c0392b;
+}
+
+#home .item.recieve:hover, #home .item.log:hover {
+  background-color: #fff;
+  color: #c0392b;
 }
 /*# sourceMappingURL=main.css.map */

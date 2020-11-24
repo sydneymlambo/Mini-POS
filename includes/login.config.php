@@ -18,7 +18,7 @@ include 'connect.php';
 			if(@mysqli_num_rows($result) == 1){
 				session_start();
 				$_SESSION = mysqli_fetch_array($result,MYSQLI_ASSOC);
-				header("location: index.php");
+				header("location: /home");
 				exit();
 				mysqli_free_result($result);
 				mysqli_close($db);

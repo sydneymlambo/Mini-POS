@@ -1,0 +1,5 @@
+ReWriteEngine On
+
+RewriteRule ^home/([^/\.]+)?$ /index.php [L]
+RewriteRule ^login/([^/\.]+)?$ /login.php [L]
+RewriteRule ^sale/([^/\.]+)?$ /sales.php [L]
