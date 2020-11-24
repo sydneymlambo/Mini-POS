@@ -27,7 +27,7 @@ include 'head.php';
             <div class="col-12 col-md-6 text-center items">
                 <a class="item sales" href="sales.php">
                     <span><i class="fa fa-money" aria-hidden="true"></i></span>
-                    <em>Sales</em>
+                    <em>Make Sale</em>
                 </a>
             </div>
             <div class="col-12 col-md-6 text-center items">
